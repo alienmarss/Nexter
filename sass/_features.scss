@@ -1,0 +1,53 @@
+.features {
+	grid-column: center-start / center-end;
+
+	margin: 15rem 0;
+
+	display: grid;
+	//grid-template-columns: repeat(3, 1fr);
+	// creating responsive grid without media queries
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-gap: 6rem;
+
+	//to fix last to grid for start it from top
+	align-items: start;
+
+	/*
+	//code for supporting old browsers
+	
+    @supports(display:grid){
+    display: grid;
+	//grid-template-columns: repeat(3, 1fr);
+	// creating responsive grid without media queries
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-gap: 6rem;
+
+	//to fix last to grid for start it from top
+	align-items: start;
+}
+	*/
+}
+
+.feature {
+	//we creating grid for organize icon text and heading
+	display: grid;
+	grid-template-columns: min-content 1fr;
+	grid-row-gap: 1.5rem;
+	grid-column-gap: 2.5rem;
+
+	&__icon {
+		//to change icon color
+		fill: $color-primary;
+		// to size icon
+		width: 4.5rem;
+		height: 4.5rem;
+		//we use span 2 because it -1 works only for explicit grid and thats why we make it for implicit
+		grid-row: 1 / span 2;
+		//making icon shift little bit on top to make it position on center visually
+		transform: translateY(-1rem);
+	}
+
+	&__text {
+		font-size: 1.7rem;
+	}
+}
